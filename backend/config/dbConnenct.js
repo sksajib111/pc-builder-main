@@ -7,7 +7,7 @@ const dbConnect = async () => {
 
   mongoose.set("strictQuery", false);
   try {
-    await mongoose.connect("mongodb+srv://pcbuilder:T3c3LOMXut8IdWr9@cluster0.dgoei.mongodb.net/pc-builder?retryWrites=true&w=majority", {
+    await mongoose.connect(`${process.env.DB_URL}`, {
       useNewUrlParser: true,
       useUnifiedTopology: true,
     });
